@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Knowledge Navigator ユーザーガイド</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif; background: #f0eff8; color: #333; line-height: 1.8; }
+  .header { background: linear-gradient(135deg, #26215C, #534AB7); color: white; padding: 40px 20px; text-align: center; }
+  .header h1 { font-size: 28px; margin-bottom: 8px; }
+  .header p { font-size: 15px; opacity: 0.85; }
+  .container { max-width: 720px; margin: 0 auto; padding: 20px; }
+  .section { background: white; border-radius: 16px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .section-title { font-size: 20px; font-weight: 700; color: #26215C; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .step { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
+  .step-num { background: #534AB7; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; flex-shrink: 0; }
+  .step-content h3 { font-size: 16px; font-weight: 600; color: #26215C; margin-bottom: 4px; }
+  .step-content p { font-size: 14px; color: #555; }
+  .tip { background: #f0eff8; border-left: 4px solid #534AB7; padding: 12px 16px; border-radius: 4px; margin: 12px 0; font-size: 14px; color: #444; }
+  .tip strong { color: #534AB7; }
+  .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .feature-card { background: #f8f8ff; border-radius: 12px; padding: 16px; border: 1px solid #e8e8f0; }
+  .feature-card .icon { font-size: 28px; margin-bottom: 8px; }
+  .feature-card h3 { font-size: 14px; font-weight: 600; color: #26215C; margin-bottom: 4px; }
+  .feature-card p { font-size: 12px; color: #666; line-height: 1.6; }
+  .char-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .char-card { background: #f8f8ff; border-radius: 12px; padding: 16px; text-align: center; border: 1px solid #e8e8f0; }
+  .char-card .emoji { font-size: 36px; margin-bottom: 8px; }
+  .char-card h3 { font-size: 14px; font-weight: 600; color: #26215C; }
+  .char-card p { font-size: 12px; color: #666; margin-top: 4px; }
+  .warning { background: #fff3e0; border-left: 4px solid #ff9800; padding: 12px 16px; border-radius: 4px; margin: 12px 0; font-size: 14px; color: #555; }
+  .success { background: #e8f5e9; border-left: 4px solid #4caf50; padding: 12px 16px; border-radius: 4px; margin: 12px 0; font-size: 14px; color: #555; }
+  .tab-nav { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+  .tab-item { background: #f0eff8; border-radius: 20px; padding: 6px 14px; font-size: 13px; color: #534AB7; font-weight: 500; }
+  footer { text-align: center; padding: 30px 20px; color: #888; font-size: 13px; }
+  h2.subtitle { font-size: 15px; color: #666; font-weight: 400; margin-top: 4px; }
+  .badge { display: inline-block; background: #534AB7; color: white; border-radius: 12px; padding: 2px 10px; font-size: 12px; margin-left: 8px; vertical-align: middle; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🧭 Knowledge Navigator</h1>
+  <p>AIキャラクターがあなたの毎日をサポート</p>
+  <p style="margin-top: 8px; font-size: 13px; opacity: 0.7;">ユーザーガイド ver 1.0</p>
+</div>
+
+<div class="container">
+
+  <!-- TestFlight インストール -->
+  <div class="section">
+    <div class="section-title">📲 はじめに：TestFlightのインストール</div>
+    <p style="font-size: 14px; color: #555; margin-bottom: 16px;">Knowledge Navigatorはテスト版のため、TestFlightというApple公式アプリを使ってインストールします。</p>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h3>TestFlightをインストール</h3>
+        <p>App Storeで「TestFlight」を検索してインストールしてください。（Appleの無料アプリです）</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h3>招待メールを確認</h3>
+        <p>開発者から届いた招待メールを開き、「View in TestFlight」ボタンをタップしてください。迷惑メールフォルダも確認してみてください。</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h3>アプリをインストール</h3>
+        <p>TestFlightアプリが開いたら「インストール」をタップ。完了したら「開く」でアプリを起動できます。</p>
+      </div>
+    </div>
+
+    <div class="tip">
+      <strong>💡 ヒント：</strong> TestFlightのテスト版は90日間有効です。新しいバージョンが届いたら、TestFlightアプリから「アップデート」してください。
+    </div>
+  </div>
+
+  <!-- 初回設定 -->
+  <div class="section">
+    <div class="section-title">⚙️ 初回設定：キャラクターとプロフィール</div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h3>お名前を入力</h3>
+        <p>最初にお名前を入力します。AIキャラクターがあなたの名前で話しかけてくれます。</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h3>業界・お仕事を選択</h3>
+        <p>あなたの業界とお仕事を入力します。これによってAIのアドバイスがより的確になります。</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h3>現在の状況・悩みを入力（任意）</h3>
+        <p>「就活準備中」「育児と仕事の両立」など、今の状況を自由に書くとAIがより深く理解してくれます。</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h3>キャラクターを選ぶ</h3>
+        <p>設定タブからお好みのキャラクターを選んでください。いつでも変更できます。</p>
+      </div>
+    </div>
+
+    <div class="char-grid" style="margin-top: 16px;">
+      <div class="char-card">
+        <div class="emoji">🧓</div>
+        <h3>Mr. スミス</h3>
+        <p>紳士的な執事。丁寧で頼れる相棒</p>
+      </div>
+      <div class="char-card">
+        <div class="emoji">👩</div>
+        <h3>Ms. アリア</h3>
+        <p>知的な女性秘書。的確で温かみのある対応</p>
+      </div>
+      <div class="char-card">
+        <div class="emoji">🤖</div>
+        <h3>R-01（ロボット）</h3>
+        <p>AIロボット。簡潔でシステム的な話し方</p>
+      </div>
+      <div class="char-card">
+        <div class="emoji">🐱</div>
+        <h3>ネコ</h3>
+        <p>気まぐれな猫。にゃ〜などの猫語で癒し系</p>
+      </div>
+    </div>
+
+    <div class="tip" style="margin-top: 16px;">
+      <strong>🎨 テーマカラー：</strong> キャラクターによってアプリ全体の色が変わります。Mr.スミスはネイビー、Ms.アリアはパープル、ネコはブラウンです。
+    </div>
+  </div>
+
+  <!-- ホーム画面の使い方 -->
+  <div class="section">
+    <div class="section-title">🏠 ホーム画面の使い方</div>
+
+    <div class="step">
+      <div class="step-num">①</div>
+      <div class="step-content">
+        <h3>キャラクターをタップして話しかける</h3>
+        <p>画面中央のキャラクターをタップするとマイクが起動します。話し終わったらもう一度タップして停止。AIが音声とテキストで返答します。</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">②</div>
+      <div class="step-content">
+        <h3>テキストで入力</h3>
+        <p>キャラクター下の「⌨️ テキストで入力」をタップするとキーボード入力できます。音声が使いにくい場所でも便利です。</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">③</div>
+      <div class="step-content">
+        <h3>音声を途中で止める</h3>
+        <p>AIが話している最中に「⏹ 音声を停止」ボタンが表示されます。長い回答を途中で止めることができます。</p>
+      </div>
+    </div>
+
+    <div class="tip">
+      <strong>💬 何でも聞けます：</strong>「明日の天気は？」「近くのカフェを教えて」「今日のニュースは？」など、気軽に話しかけてみてください。回答はテキストでも表示されます。
+    </div>
+
+    <div class="warning">
+      <strong>⏳ 少し待つことがあります：</strong> 最新情報を検索する場合、10〜20秒ほどかかることがあります。「考えています...」「情報を調べています...」と表示されるのでお待ちください。
+    </div>
+  </div>
+
+  <!-- 各タブの説明 -->
+  <div class="section">
+    <div class="section-title">📱 各タブの機能</div>
+
+    <div class="tab-nav">
+      <span class="tab-item">🏠 ホーム</span>
+      <span class="tab-item">✅ やること</span>
+      <span class="tab-item">📥 受信箱</span>
+      <span class="tab-item">🔍 リサーチ</span>
+      <span class="tab-item">🌐 翻訳</span>
+      <span class="tab-item">⚙️ 設定</span>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="icon">✅</div>
+        <h3>やること</h3>
+        <p>タスク管理。音声でやることを追加できます。AIが提案してくれる機能も。キャラクターから一言もらえます。</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">📥</div>
+        <h3>受信箱</h3>
+        <p>写真・書類・テキスト・URLを投げ込むとAIが分析。音声・テキストで依頼もできます。</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🔍</div>
+        <h3>リサーチ</h3>
+        <p>詳しい調査はここで。近くのお店検索、ニュース収集、比較検討など。地図リンク付きで表示。</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🌐</div>
+        <h3>翻訳</h3>
+        <p>テキスト翻訳・音声翻訳・📷画像翻訳（OCR）に対応。スクリーンショットを投げるだけで翻訳できます。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 便利な使い方 -->
+  <div class="section">
+    <div class="section-title">✨ 便利な使い方</div>
+
+    <div class="step">
+      <div class="step-num">🗺</div>
+      <div class="step-content">
+        <h3>近くのお店を探す</h3>
+        <p>「近くのカフェ」「近隣の和食レストラン」と話しかけると、現在地周辺のお店をリサーチして地図付きで教えてくれます。</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">📷</div>
+      <div class="step-content">
+        <h3>写真を翻訳する</h3>
+        <p>翻訳タブの「📷 画像から翻訳」をタップ→写真を選ぶと、写真内の文字を自動読み取りして翻訳します。海外のメニューや書類に便利。</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">🎙</div>
+      <div class="step-content">
+        <h3>会議を録音して議事録を作る</h3>
+        <p>ホーム画面でキャラクターを長押しすると「議事録として保存」が選べます。会議後に自動で議事録とアクションアイテムを作成します。</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">📅</div>
+      <div class="step-content">
+        <h3>カレンダーに予定を追加</h3>
+        <p>ホーム画面のスケジュール欄から「＋ iPhoneカレンダーに予定を追加」をタップして予定を追加できます。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 権限について -->
+  <div class="section">
+    <div class="section-title">🔐 アプリが使う権限について</div>
+    <p style="font-size: 14px; color: #555; margin-bottom: 16px;">初回使用時にいくつかの権限を求める場合があります。機能を使うために必要です。</p>
+
+    <div class="step">
+      <div class="step-num">📍</div>
+      <div class="step-content">
+        <h3>位置情報</h3>
+        <p>近くのお店検索・天気に使います。「このAppの使用中のみ許可」を選んでください。</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">🎙</div>
+      <div class="step-content">
+        <h3>マイク</h3>
+        <p>音声入力・会議録音に使います。「許可」を選んでください。</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">📅</div>
+      <div class="step-content">
+        <h3>カレンダー・リマインダー</h3>
+        <p>予定の表示・追加に使います。「フルアクセスを許可」を選んでください。</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">📷</div>
+      <div class="step-content">
+        <h3>写真・カメラ</h3>
+        <p>画像翻訳・受信箱機能に使います。「全ての写真へのアクセスを許可」を選んでください。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- よくある質問 -->
+  <div class="section">
+    <div class="section-title">❓ よくある質問</div>
+
+    <div class="step">
+      <div class="step-num">Q</div>
+      <div class="step-content">
+        <h3>返答が来ない・遅い</h3>
+        <p>サーバーが起動中の場合、初回のみ30秒ほどかかることがあります。少しお待ちいただくか、もう一度タップしてみてください。</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">Q</div>
+      <div class="step-content">
+        <h3>音声が出ない</h3>
+        <p>右上の「音声ON」ボタンをタップして音声をオンにしてください。マナーモードでも音声が出ます。</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">Q</div>
+      <div class="step-content">
+        <h3>キャラクターを変えたい</h3>
+        <p>下部の「設定」タブ→キャラクター選択から変更できます。いつでも変更可能です。</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">Q</div>
+      <div class="step-content">
+        <h3>プロフィールをリセットしたい</h3>
+        <p>「設定」タブ下部の「プロフィールをリセット」ボタンからリセットできます。最初からやり直せます。</p>
+      </div>
+    </div>
+
+    <div class="success">
+      <strong>📝 フィードバックをお願いします：</strong> 使ってみて気になった点、改善してほしい点などあればぜひ教えてください。TestFlightのフィードバック機能またはメールでお知らせください。
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>Knowledge Navigator © 2026 CodeBlue Tokyo</p>
+  <p style="margin-top: 4px;">お問い合わせ: nobuhiro08@icloud.com</p>
+</footer>
+
+</body>
+</html>
