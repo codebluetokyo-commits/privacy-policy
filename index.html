@@ -72,6 +72,7 @@
     <tr><td>写真・カメラ</td><td>画像の解析・翻訳</td><td>使用時のみ</td></tr>
   </table>
   <p>いずれもiOSの許可ダイアログでお客様が同意した場合にのみ利用します。許可しない場合、該当機能のみが使用できなくなります。</p>
+  <p>カレンダーについては、予定をふまえた応答を生成するため、<strong>直近の予定（予定名・日時・場所）をAIサービスに送信します。</strong>送信するのは直近数日分のみです。カレンダーから読み取った予定を単独のデータとして当方のデータベースに保存することはありませんが、AIとの会話に含まれた場合は、会話履歴の一部として保存されます。カレンダーへのアクセスを許可しない場合、この機能は動作しませんが、他の機能は通常どおりご利用いただけます。</p>
 
   <h2>2. 情報の保存場所</h2>
   <p>お客様のプロフィール・会話履歴・タスクは、<strong>シンガポールに所在するデータベース（Neon PostgreSQL）に保存されます。</strong>データは匿名デバイス識別子に紐づけて管理され、氏名やメールアドレスによる個人の特定は行いません。</p>
@@ -180,6 +181,7 @@
     <tr><td>Photos / Camera</td><td>Image analysis and translation</td><td>Only while in use</td></tr>
   </table>
   <p>Each is used only after you grant permission through the iOS permission dialog. Declining disables only the corresponding feature.</p>
+  <p>For the calendar, in order to generate responses that take your schedule into account, <strong>upcoming events (title, date and time, location) are sent to the AI service.</strong> Only the next few days are sent. Events read from your calendar are not stored in our database as standalone data; however, if they appear in a conversation with the AI, they are retained as part of your conversation history. If you decline calendar access, this feature will not work, but all other features remain available.</p>
 
   <h2>2. Where Data Is Stored</h2>
   <p>Your profile, conversation history, and tasks are stored in <strong>a database located in Singapore (Neon PostgreSQL)</strong>. Data is keyed to an anonymous device identifier; we do not identify individuals by name or email address.</p>
