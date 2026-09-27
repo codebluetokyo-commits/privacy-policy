@@ -68,13 +68,13 @@
   <table>
     <tr><th>機能</th><th>目的</th><th>許可</th></tr>
     <tr><td>位置情報（GPS）</td><td>天気情報・周辺情報の取得、調べ物の際の地域の特定</td><td>使用時のみ</td></tr>
-    <tr><td>マイク</td><td>音声入力の認識、議事録のための録音</td><td>使用時のみ</td></tr>
+    <tr><td>マイク</td><td>音声入力の認識、議事録のための文字起こし</td><td>使用時のみ</td></tr>
     <tr><td>カレンダー</td><td>予定の表示・追加</td><td>明示的な許可後</td></tr>
     <tr><td>リマインダー</td><td>リマインダーの追加</td><td>明示的な許可後</td></tr>
     <tr><td>写真・カメラ</td><td>画像の解析・翻訳</td><td>使用時のみ</td></tr>
   </table>
   <p>いずれもiOSの許可ダイアログでお客様が同意した場合にのみ利用します。許可しない場合、該当機能のみが使用できなくなります。</p>
-  <p>音声入力と議事録の文字起こしには、iOS標準の音声認識機能（Apple Inc.）を使用します。議事録のために録音した音声は端末内に保存され、当方のサーバーには送信しません。当方のサーバーに送信するのは、文字に起こした内容のみです。</p>
+  <p>音声入力と議事録の文字起こしには、iOS標準の音声認識機能（Apple Inc.）を使用します。議事録の機能では、音声を録音ファイルとして保存せず、文字に起こした内容だけを扱います。当方のサーバーに送信するのは、文字に起こした内容のみです。</p>
   <p>カレンダーについては、予定をふまえた応答を生成するため、<strong>直近の予定（予定名・日時・場所）をAIサービスに送信します。</strong>送信するのは直近数日分のみです。カレンダーから読み取った予定を単独のデータとして当方のデータベースに保存することはありませんが、AIとの会話に含まれた場合は、会話履歴の一部として端末内に保存されるほか、会話の記憶（1-4）として保存されることがあります。カレンダーへのアクセスを許可しない場合、この機能は動作しませんが、他の機能は通常どおりご利用いただけます。</p>
 
   <h3>1-4. 会話の記憶</h3>
@@ -196,13 +196,13 @@
   <table>
     <tr><th>Feature</th><th>Purpose</th><th>Permission</th></tr>
     <tr><td>Location (GPS)</td><td>Weather and nearby information; identifying your area when you ask the App to look something up</td><td>Only while in use</td></tr>
-    <tr><td>Microphone</td><td>Voice input recognition; recording for meeting minutes</td><td>Only while in use</td></tr>
+    <tr><td>Microphone</td><td>Voice input recognition; transcription for meeting minutes</td><td>Only while in use</td></tr>
     <tr><td>Calendar</td><td>Viewing and adding events</td><td>After explicit consent</td></tr>
     <tr><td>Reminders</td><td>Adding reminders</td><td>After explicit consent</td></tr>
     <tr><td>Photos / Camera</td><td>Image analysis and translation</td><td>Only while in use</td></tr>
   </table>
   <p>Each is used only after you grant permission through the iOS permission dialog. Declining disables only the corresponding feature.</p>
-  <p>Voice input and meeting-minute transcription use the speech recognition built into iOS (Apple Inc.). Audio recorded for meeting minutes stays on your device and is never sent to our server. Only the transcribed text is sent to our server.</p>
+  <p>Voice input and meeting-minute transcription use the speech recognition built into iOS (Apple Inc.). The meeting-minutes feature does not save audio recordings; it handles only the transcribed text. Only the transcribed text is sent to our server.</p>
   <p>For the calendar, in order to generate responses that take your schedule into account, <strong>upcoming events (title, date and time, location) are sent to the AI service.</strong> Only the next few days are sent. Events read from your calendar are not stored in our database as standalone data; however, if they appear in a conversation with the AI, they are kept on your device as part of your conversation history, and may be saved as Conversation Memory (see 1-4). If you decline calendar access, this feature will not work, but all other features remain available.</p>
 
   <h3>1-4. Conversation Memory</h3>
