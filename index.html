@@ -74,7 +74,7 @@
     <tr><td>写真・カメラ</td><td>画像の解析・翻訳・レシートの読み取り。設定でオンにした場合は、写真アプリの「レシート」アルバムに追加された新しい写真を、アプリを開いたときに確認します（読み取るかどうかはその都度お聞きします）</td><td>使用時のみ（「レシート」アルバムの確認は、設定でオンにした場合のみ）</td></tr>
   </table>
   <p>いずれもiOSの許可ダイアログでお客様が同意した場合にのみ利用します。許可しない場合、該当機能のみが使用できなくなります。</p>
-  <p>音声入力と議事録の文字起こしには、iOS標準の音声認識機能（Apple Inc.）を使用します。議事録の機能では、音声を録音ファイルとして保存せず、文字に起こした内容だけを扱います。当方のサーバーに送信するのは、文字に起こした内容のみです。</p>
+  <p>音声入力と議事録の文字起こしには、iOS標準の音声認識機能（Apple Inc.）を使用します。議事録の機能では、より正確に文字に起こすため、録音中の音声を約50秒ごとの区切りに分けて当方のサーバー経由で文字起こしサービス（OpenAI, L.L.C.）に送信します。話し声のない区切りは送信しません。送信した音声は、文字に起こしたあと端末から削除し、当方のサーバーにも保存しません。文字起こしサービスが利用できない場合は、iOS標準の音声認識で起こした文字を使います。</p>
   <p>カレンダーについては、予定をふまえた応答を生成するため、<strong>直近の予定（予定名・日時・場所）をAIサービスに送信します。</strong>送信するのは直近数日分のみです。カレンダーから読み取った予定を単独のデータとして当方のデータベースに保存することはありませんが、AIとの会話に含まれた場合は、会話履歴の一部として端末内に保存されるほか、会話の記憶（1-4）として保存されることがあります。カレンダーへのアクセスを許可しない場合、この機能は動作しませんが、他の機能は通常どおりご利用いただけます。</p>
 
   <h3>1-4. 会話の記憶</h3>
@@ -93,6 +93,7 @@
   <table>
     <tr><th>サービス</th><th>目的</th><th>送信する情報</th></tr>
     <tr><td>Anthropic, PBC（Claude API）</td><td>AI応答の生成・翻訳・画像解析・Web検索</td><td>会話内容、プロフィール、会話の記憶、送信された画像</td></tr>
+    <tr><td>OpenAI, L.L.C.</td><td>議事録のための音声の文字起こし</td><td>録音中の音声（約50秒ごとの区切り）</td></tr>
     <tr><td>Neon, Inc.</td><td>データベースの提供</td><td>匿名デバイス識別子、会話の記憶、利用状況、購読状態</td></tr>
     <tr><td>Render Services, Inc.</td><td>APIサーバーの稼働</td><td>通信内容（処理のための経由）</td></tr>
     <tr><td>RevenueCat, Inc.</td><td>サブスクリプション状態の管理</td><td>匿名デバイス識別子、購入情報</td></tr>
@@ -104,7 +105,7 @@
   </table>
   <p>お客様が地図ボタンを押した場合は、店舗名と地域名が Apple マップまたは Google マップに渡ります。</p>
   <p>各事業者における取り扱いは、それぞれのプライバシーポリシーに従います。</p>
-  <p>当方は、上記の各事業者が本ポリシーと同等またはそれ以上のデータ保護水準を提供していることを確認しています。特に Anthropic, PBC は、API経由で送信されたデータをAIモデルの学習に使用しない方針を公表しています。</p>
+  <p>当方は、上記の各事業者が本ポリシーと同等またはそれ以上のデータ保護水準を提供していることを確認しています。特に Anthropic, PBC と OpenAI, L.L.C. は、API経由で送信されたデータを、既定ではAIモデルの学習に使用しない方針を公表しています。</p>
 
   <h2>4. 情報の共有</h2>
   <p>当方は、以下の場合を除き、お客様の情報を第三者と共有しません。</p>
@@ -203,7 +204,7 @@
     <tr><td>Photos / Camera</td><td>Image analysis, translation, and receipt reading. If you turn it on in settings, the App checks for new photos added to the "レシート" (Receipts) album in the Photos app when you open the App, and asks you each time whether to read them</td><td>Only while in use (the Receipts album check runs only if you turn it on)</td></tr>
   </table>
   <p>Each is used only after you grant permission through the iOS permission dialog. Declining disables only the corresponding feature.</p>
-  <p>Voice input and meeting-minute transcription use the speech recognition built into iOS (Apple Inc.). The meeting-minutes feature does not save audio recordings; it handles only the transcribed text. Only the transcribed text is sent to our server.</p>
+  <p>Voice input and meeting-minute transcription use the speech recognition built into iOS (Apple Inc.). For more accurate meeting minutes, audio captured during recording is split into segments of about 50 seconds and sent through our server to a transcription service (OpenAI, L.L.C.). Segments without speech are not sent. After transcription, the audio is deleted from your device and is not stored on our server. If the transcription service is unavailable, the text produced by the iOS speech recognition is used instead.</p>
   <p>For the calendar, in order to generate responses that take your schedule into account, <strong>upcoming events (title, date and time, location) are sent to the AI service.</strong> Only the next few days are sent. Events read from your calendar are not stored in our database as standalone data; however, if they appear in a conversation with the AI, they are kept on your device as part of your conversation history, and may be saved as Conversation Memory (see 1-4). If you decline calendar access, this feature will not work, but all other features remain available.</p>
 
   <h3>1-4. Conversation Memory</h3>
@@ -222,6 +223,7 @@
   <table>
     <tr><th>Service</th><th>Purpose</th><th>Information sent</th></tr>
     <tr><td>Anthropic, PBC (Claude API)</td><td>Generating AI responses, translation, image analysis, web search</td><td>Conversation content, profile, Conversation Memory, submitted images</td></tr>
+    <tr><td>OpenAI, L.L.C.</td><td>Transcribing audio for meeting minutes</td><td>Audio captured during recording (segments of about 50 seconds)</td></tr>
     <tr><td>Neon, Inc.</td><td>Database hosting</td><td>Anonymous device identifier, Conversation Memory, usage data, subscription status</td></tr>
     <tr><td>Render Services, Inc.</td><td>Running the API server</td><td>Request data in transit</td></tr>
     <tr><td>RevenueCat, Inc.</td><td>Managing subscription state</td><td>Anonymous device identifier, purchase information</td></tr>
@@ -233,7 +235,7 @@
   </table>
   <p>If you tap a map button, the shop name and area are passed to Apple Maps or Google Maps.</p>
   <p>Each provider handles data according to its own privacy policy.</p>
-  <p>We have confirmed that each of the providers listed above offers data protection equivalent to or stronger than that described in this policy. In particular, Anthropic, PBC states that data submitted through its API is not used to train its models.</p>
+  <p>We have confirmed that each of the providers listed above offers data protection equivalent to or stronger than that described in this policy. In particular, Anthropic, PBC and OpenAI, L.L.C. state that data submitted through their APIs is not used to train their models by default.</p>
 
   <h2>4. Information Sharing</h2>
   <p>We do not share your information with third parties except:</p>
